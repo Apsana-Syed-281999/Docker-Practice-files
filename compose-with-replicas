@@ -1,0 +1,44 @@
+---
+services:
+  makeup:
+    image: apsanadevops/beauty:makeup
+    ports:
+      - "80"
+    networks:
+      - ntw1
+      - ntw2
+    deploy:
+      replicas: 2
+
+  jewels:
+    image: apsanadevops/beauty:jewels
+    ports:
+      - "80"
+    networks:
+      - ntw2
+      - ntw1
+    deploy:
+      replicas: 3
+
+  new:
+    build: .
+    container_name: con3
+    ports:
+      - "3333:80"
+    volumes:
+      - vol1:/usr/share/nginx/html
+    networks:
+      - ntw3
+
+
+
+
+volumes:
+  vol1:
+ 
+
+
+networks:
+  ntw1:
+  ntw2:
+  ntw3:
