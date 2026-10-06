@@ -2,6 +2,9 @@
 ### second img is from dockerhub
 ### third image is locally yet to build
 
+### makeup and jewels communicate with each other
+### con3 has volume mounted on it
+
 ### docker-compose up -d
 
 ---
