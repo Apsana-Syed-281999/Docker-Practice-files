@@ -1,3 +1,5 @@
+### something wrong with compose.yml, specifically the images, check tmrw
+
 services:
   devopsdb:
     image: apsanadevops/docker-webapp:dbimg
