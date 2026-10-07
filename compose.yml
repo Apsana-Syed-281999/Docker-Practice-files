@@ -1,0 +1,36 @@
+services:
+  devopsdb:
+    image: apsanadevops/docker-webapp:dbimg
+    ports:
+      - 2222:3306
+    deploy:
+      replicas: 3
+    networks:
+      - dbnw
+      - appnw
+    volumes:
+      - vol1:/apsana
+    environment:
+      MYSQL_ROOT_PASSWORD: appu
+
+  appcon:
+    image: apsanadevops/docker-webapp:appimg
+    ports:
+      - 3333:8080
+    deploy:
+      replicas: 3
+    networks:
+      - dbnw
+      - appnw
+    volumes:
+      - vol2:/apsana
+
+networks:
+  dbnw:
+    driver: overlay
+  appnw:
+    driver: overlay
+
+volumes:
+  vol1:
+  vol2:
