@@ -1,0 +1,34 @@
+---
+services:
+  makeup:
+    image: apsanadevops/beauty:makeup
+    container_name: makeup
+    ports:
+      - "1111:80"
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 200M
+        reservations:
+          cpus: 0.5
+          memory: 100M
+
+  jewels:
+    image: apsanadevops/beauty:jewels
+    container_name: jewels
+    ports:
+      - "2222:80"
+    environment:
+      name: jewels
+      purpose: cosmetic
+      port: 80
+
+
+  new:
+    image: nginx
+    container_name: con3
+    ports:
+      - "3333:80"
+    env_file:
+      - dev.env
