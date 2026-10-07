@@ -11,7 +11,7 @@ services:
     volumes:
       - vol1:/apsana
     environment:
-      MYSQL_ROOT_PASSWORD: appu
+      MYSQL_ROOT_PASSWORD: devopspassword
 
   appcon:
     image: apsanadevops/docker-webapp:appimg
