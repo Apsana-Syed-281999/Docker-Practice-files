@@ -1,0 +1,38 @@
+---
+services:
+  db:
+    image: dbimg
+    ports:
+      - "2222:3306"
+    deploy:
+      replicas : 2
+
+  auth_service:
+    image: authimg
+    ports:
+      - "6666:5001"
+    deploy:
+      replicas: 2
+
+  book_service:
+    image: bookimg
+    ports:
+      - "3333:5002"
+    deploy:
+      replicas : 2
+
+  borrow_service:
+    image: borrowimg
+    ports:
+      - "4444:5003"
+    deploy:
+      replicas: 2
+
+  frontend:
+    image: frontendimg
+    ports:
+      - "5555:5000"
+    deploy:
+      replicas: 2
+
+...
