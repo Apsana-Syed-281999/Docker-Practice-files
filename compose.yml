@@ -1,38 +1,55 @@
 ---
 services:
   db:
-    image: dbimg
+    image: dimg
     ports:
       - "2222:3306"
     deploy:
       replicas : 2
+    networks:
+      - appnw
+
 
   auth_service:
-    image: authimg
+    image: aimg
     ports:
       - "6666:5001"
     deploy:
       replicas: 2
+    networks:
+      - appnw
+
 
   book_service:
-    image: bookimg
+    image: bkimg
     ports:
       - "3333:5002"
     deploy:
       replicas : 2
+    networks:
+      - appnw
+
 
   borrow_service:
-    image: borrowimg
+    image: brbimg
     ports:
       - "4444:5003"
     deploy:
       replicas: 2
+    networks:
+      - appnw
 
+      
   frontend:
-    image: frontendimg
+    image: fimg
     ports:
       - "5555:5000"
     deploy:
       replicas: 2
+    networks:
+      - appnw
 
+networks:
+  appnw:
+    driver: overlay
 ...
