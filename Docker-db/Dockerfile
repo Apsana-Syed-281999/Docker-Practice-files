@@ -6,4 +6,3 @@ COPY db_backup.sql docker-entrypoint-initdb.d/db_backup.sql
 RUN adduser --system -group aps
 RUN chown -R aps:aps docker-entrypoint-initdb.d/db_backup.sql
 ENV MYSQL_DATABASE=accounts
-ENV MYSQL_ROOT_PASSWORD=devopspassword
