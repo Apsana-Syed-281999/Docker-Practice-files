@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage("Code"){
             steps{
-                git branch: 'docker-webapp', url: 'https://github.com/Apsana-Syed-281999/Docker-Practice-files.git'
+                git branch: 'docker-webapp-task', url: 'https://github.com/Apsana-Syed-281999/Docker-Practice-files.git'
             }
         }
         stage("CQA"){
