@@ -1,7 +1,7 @@
 ---
 services:
   db:
-    image: dimg
+    image: apsanadevops/monolethic:dbimg
     ports:
       - "2222:3306"
     deploy:
@@ -11,7 +11,7 @@ services:
 
 
   auth_service:
-    image: aimg
+    image: apsanadevops/monolethic:authimg
     ports:
       - "6666:5001"
     deploy:
@@ -21,7 +21,7 @@ services:
 
 
   book_service:
-    image: bkimg
+    image: apsanadevops/monolethic:bookimg
     ports:
       - "3333:5002"
     deploy:
@@ -31,7 +31,7 @@ services:
 
 
   borrow_service:
-    image: brbimg
+    image: apsanadevops/monolethic:borrowimg
     ports:
       - "4444:5003"
     deploy:
@@ -41,7 +41,7 @@ services:
 
       
   frontend:
-    image: fimg
+    image: apsanadevops/monolethic:frontendimg
     ports:
       - "5555:5000"
     deploy:
