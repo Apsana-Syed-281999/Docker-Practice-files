@@ -20,8 +20,8 @@ pipeline{
                  mvn -B clean verify \
                  org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                 -Dsonar.projectKey=My_Sonar_Project \
-                -Dsonar.host.url=http://184.195.136.74:1111 \
-                -Dsonar.login=sqp_67df9c53dddae7a490dbe4874cbb2aaf1cc7896f
+                -Dsonar.host.url=http://3.238.54.6:1111  \
+                -Dsonar.login=sqp_541464c624fe286f469fa13a62c55890b96d9eaf
                 '''
                 }
             }
@@ -39,7 +39,10 @@ pipeline{
         }
         stage("Nexus Artifacts"){
             steps{
-                nexusArtifactUploader artifacts: [[artifactId: 'vprofile', classifier: '', file: 'target/vprofile-v2.war', type: 'war']], credentialsId: 'nexus-credentials', groupId: 'com.visualpathit', nexusUrl: '44.202.202.84:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'docker-webapp', version: '4.0.0'
+                script{
+                    def pom = readMavenPom file: 'pom.xml'
+                    nexusArtifactUploader artifacts: [[artifactId: 'pom.artifactId', classifier: '', file: 'target/vprofile-v2.war', type: 'war']], credentialsId: 'nexus-credentials', groupId: 'pom.groupId', nexusUrl: '32.199.193.113:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'docker-webapp', version: 'pom.modelVersion'
+                }
             }
         }
         stage("Docker images with proper tag"){
@@ -48,8 +51,8 @@ pipeline{
                 sh 'docker build -t apsanadevops/docker-webapp:appimg ./Docker-app'
             }
         
-    }
-        stage("Scan images"){
+         }
+         stage("Scan images"){
             steps{
                 sh 'trivy image apsanadevops/docker-webapp:dbimg >> db-report.txt'
                 sh 'trivy image apsanadevops/docker-webapp:appimg >> app-report.txt'
