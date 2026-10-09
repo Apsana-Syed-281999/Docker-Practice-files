@@ -1,3 +1,4 @@
+###Tomcat is used to deploy the java application
 FROM tomcat:8-jre11
 LABEL image for Docker-app
 MAINTAINER Apsana
