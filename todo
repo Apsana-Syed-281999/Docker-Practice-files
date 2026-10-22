@@ -2,6 +2,7 @@ Learn Production Dockerfile for nginx, httpd, python, java, nodejs, db.  -> Done
 Learn multistage Dockerfile for nginx, httpd, python, java, nodejs, db, ubuntu, C, C++, PHP, micro-services k8s project's all Dockerfile
 Learn to deploy docker-webapp application by using ECR from AWS, If possible learn stack also by pushing image to ECR through stack
 Practice all projects again!!!
+Do certifications for all the concept you learned
 Definitely learn python script
 Go through the interview questions done on 8th and 9th oct, specifically 9th oct
 Go through Azure, leetcode
@@ -9,3 +10,24 @@ Correlate the learning with GM stuffs
 Include project in resume and linkedIn/Naukri
 Prepare resume based on job description of company we are going to apply
 Do certifications on Jenkins, Docker, k8s and Terraform
+
+
+
+
+
+####Resume ####
+4 years -> AWS devops, 1 -> testing
+Keep changing the summary as per job description -> copy the entire JD  and ask AI -> #### Based on this JD can you send me a ATS friendly summary for my resume where the summaryshould be within 3-4 lines ###
+for 4 years -> 2 projects should be mentioned.(3 yrs -> 1 project, recently 1 yr -> another project got added, or we can say old project got end and new project came)
+Do not keep the description as it is provided by sir, do modify the description of project. modify entire resume -> if you want copy paste the descripion and ask AI to create one based on JD.
+Latest education should be sufficient(no need of entire histor)
+for resume building use canvas, currently we have some option in FLM, refer to that aswell.
+No need of mentioning Project name in resume, just mention the description
+
+
+###certificates####
+terraform 003
+
+
+### yaml ####
+Interview -> Pod, Deploy, Svc, no other things are asked
