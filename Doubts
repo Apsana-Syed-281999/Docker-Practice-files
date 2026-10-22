@@ -1,0 +1,66 @@
+Instance
+Why the option of creating server with no "Key pair" exists if it's not recommened. an example where Server are created with no Key pair.
+Ans: Cannot share with others
+My putty keeps disconnecting from Server if I don't use. What to do? 
+Ans : default behavior, expected
+After connecting the server how to disconnect
+Ans : exit or ctrl+D
+All the files and folders that we created in putty, where can we see them? WE cannot i guess.
+
+linux -> permission topic -> chmod +x Filename , as per trainer only +x works, but for me both +x and +r works, however +w doesn't work
+
+Git -> Github actions and agent option
+
+jenkins -> why don't use private ipp addr for nexus, tomcat , connecting ssh? Why only for master-slave?
+We cannot use private addr for external browser, since master-slave is an internal connection we can use either private or public, private prefered
+if a server has both jenkins and tomcat installed in it and when we use ip_addr:port which one works(in my case jenkins opened) how the port is assigned
+Ans -> Refer jenkins .xslx -> imp_Tips page
+
+Ansible: Why give RedHat and not Amazon Linux?
+How to add ansible-vault to file present in Slave Server
+
+Docker : Since we have only 1 dockerfile which can be used to create multiple container, say i created 3 container: c1, c2, c3. now again if i want to edit anything in c1 how to do, since my latest Dockerfile will have details of C3.
+Ans : We can use multiple Dockerfile, just create folder for each of Dockerfile
+Docker : Why path is different in docker hub than that what's there in repo/taught by mustafa for nodejs and java
+Docker : how do we know which tag to be used in FROM. Also will base image details will be given by developer (Docker->TRIVY )
+Ans : We use AI for this. But still ask once
+Docker : In 3 tier project, why all the files in /user/local/tomcat/webapss/*  are cleared 
+		-> Ans: To remove unnecessary files		  
+		 why are we running the catalina.sh. 
+		-> Ans: mentioned in Dockerhub	
+		 And why the names of db container should be devopsdb? 
+		 -> Ans : names given by database team.
+Docker : Why are we using -itd few times and -d	few times while creating container (docker run -itd --name con1 -p 1111:8080 img)
+Ans: it -> internal terminal -> to interact	 
+Docker-network : What is need of creating new networks, why can't we use available n/w such as bridge network.
+Ans: Because if every container is created with default n/w, then every container can communicate with each other, say front-end can communicate with DB, which would be a problem. So we create seperate n/w in such a way only required containers talk to each other.
+Docker-compose : Incase of docker-compose integrated with jenkins, I used docker-compose to create 2 img and their container, but didn't link them all how we usually do in manually. But still the containers are linked. How?
+Ans: Every container created will by default use bridge n/w, hence they all communicate irrespective whether we create them manually or through compose, however we are not supposed to use this default n/w cause they are more vulnerable, so always create a seperate n/w and link them.
+Docker-swarm : how to identify the hostport(the port number we give while creating a container), checked docker service ps service_name in manager and docker ps in respective server.
+Ans : docker service ls   -> this cmd shows the port number
+
+
+k8s -> KOPS_CLUSTER : How to modify the number nodes in cluster after creating it.
+Ans :  kops edit cluster apscluster.k8s.local and then update the replicas and run kops edit ig --name=apscluster.k8s.local nodes-us-east-1a
+k8s:  ->RBAC How to install .key, .csr. crt for kops -> need commands
+k8s -> Volume: Why not create a single PV and assign to required PVC of Pod
+k8s  -> Volume: Took another server and installed all necessary things, created deploy.yml, pv.yml and pvc.yml and copy pasted the contents as it is.After creating the pod, pv and pvc. When entered the con of pod I don't see the files that are created.
+		Volume: Tried with kops aswell.Without StorageClassName in pv and pvc -> pv, pvc, deploy and it's pod got created. But all pod got created in same node then how to check the volume working
+										After using storageClassName in pv and pvc -> pv, pvc, deploy and it's pod got scheduled on multiple node. But no pod are running -> Failed to attach volume.
+
+k8s: -> docker-project -> Why to create TargetGroup for using Loadbalancer on worker nodes of docker swarm cluster, can't we just add labels to these worker nodes and use that labels in svc.yml file 
+Ans: Because this is a Docker alone project. No k8s is involved. So we learned a method of creating DNS for docker containers.
+k8s: -> networking -> works fine for pods created in same ns, but for different ns, apt update -y && apt install iputils-ping -y itself didn't work. When asked AI, got another .yml just to enable the access to install.
+	 -> networking -> For minikube we use calico, what about kops should we use calico or cilium?
+k8s: -> Canary-Deployment -> What is ServiceAccounts?	 
+k8s: -> ingress: Tried writing .yml file for host based routing, but how to access it?
+k8s: -> What about replication of svc, the controller manager in control-plane deals with replication of pods, nodes and svc. But only replication of node and pod were covered.
+k8s: -> Blood-Bank -> 1. How to know whether should we use MYSQL_USER or DB_USER?
+					  2. Why the  path of volumeMount is /usr/share/nginx/html(nginx path) and not /var/lib/mysql which default path of db?
+					  3. How PVC works when we didn't mention PV at all?
+					  4. Tried deleting the sts, the data were lost.
+
+
+Terraform: -> Can we create two cloud at a time?
+Terraform: ->  Can we select the AMI options such as kernel 6, kernel6.1 etc.
+Terraform: -> Does terraform create the Linux based or ubuntu based instance based on the AMI we provide?
