@@ -11,7 +11,7 @@ services:
       - dbnw
       - appnw
     volumes:
-      - vol1:/apsana
+      - vol1:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: devopspassword
 
