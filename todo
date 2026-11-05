@@ -1,6 +1,7 @@
 Learn Production Dockerfile for nginx, httpd, python, java, nodejs, db.  -> Done
 Learn multistage Dockerfile for nginx, httpd, python, java, nodejs, db, ubuntu, C, C++, PHP, micro-services k8s project's all Dockerfile
 Learn to deploy docker-webapp application by using ECR from AWS, If possible learn stack also by pushing image to ECR through stack
+Learn Lamda and Code pipelineof AWS 
 Practice all projects again!!!
 Do certifications for all the concept you learned
 Definitely learn python script
