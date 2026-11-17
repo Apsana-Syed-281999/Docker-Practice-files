@@ -9,7 +9,7 @@ services:
     networks:
       - appnw
     environment:
-      MYSQL_ROOT_PASSWORD=root
+      MYSQL_ROOT_PASSWORD: root
 
 
   auth_service:
