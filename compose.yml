@@ -11,9 +11,8 @@ services:
           cpus: "0.4"
           memory: 400M
         reservations:
-          limits:
-            cpus: "0.3"
-            memory: 300M
+          cpus: "0.3"
+          memory: 300M
     networks:
       - appnw
     environment:
@@ -31,9 +30,8 @@ services:
           cpus: "0.2"
           memory: 200M
         reservations:
-          limits:
-            cpus: "0.1"
-            memory: 100M
+          cpus: "0.1"
+          memory: 100M
     networks:
       - appnw
 
@@ -49,9 +47,8 @@ services:
           cpus: "0.2"
           memory: 200M
         reservations:
-          limits:
-            cpus: "0.1"
-            memory: 100M
+          cpus: "0.1"
+          memory: 100M
     networks:
       - appnw
 
@@ -67,9 +64,8 @@ services:
           cpus: "0.2"
           memory: 200M
         reservations:
-          limits:
-            cpus: "0.1"
-            memory: 100M
+          cpus: "0.1"
+          memory: 100M
     networks:
       - appnw
 
@@ -84,10 +80,9 @@ services:
         limits:
           cpus: "0.2"
           memory: 200M
-        reservations:
-          limits:
-            cpus: "0.1"
-            memory: 100M
+       reservations:
+          cpus: "0.1"
+          memory: 100M
     networks:
       - appnw
 
