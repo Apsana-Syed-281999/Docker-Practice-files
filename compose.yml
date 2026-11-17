@@ -2,7 +2,7 @@
 
 services:
   devopsdb:
-    image: apsanadevops/docker-webapp:dbimg
+    image: apsanadevops/practice-dockerwebapp:dbimg
     ports:
       - 2222:3306
     deploy:
@@ -16,7 +16,7 @@ services:
       MYSQL_ROOT_PASSWORD: devopspassword
 
   appcon:
-    image: apsanadevops/docker-webapp:appimg
+    image: apsanadevops/practice-dockerwebapp:appimg
     ports:
       - 3333:8080
     deploy:
