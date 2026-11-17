@@ -16,7 +16,6 @@ services:
           memory: 300M
     networks:
       - dbnw
-      - appnw
     volumes:
       - vol1:/var/lib/mysql
     environment:
@@ -38,16 +37,12 @@ services:
           memory: 100M
     networks:
       - dbnw
-      - appnw
     volumes:
       - vol2:/apsana
 
 networks:
   dbnw:
     driver: overlay
-  appnw:
-    driver: overlay
-
 volumes:
   vol1:
   vol2:
