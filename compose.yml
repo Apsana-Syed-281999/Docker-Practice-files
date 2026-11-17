@@ -5,9 +5,11 @@ services:
     ports:
       - "2222:3306"
     deploy:
-      replicas : 2
+      replicas : 1
     networks:
       - appnw
+    environment:
+      MYSQL_ROOT_PASSWORD=root
 
 
   auth_service:
